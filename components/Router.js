@@ -66,13 +66,13 @@ export const Tabs = TabNavigator({
   }
 });
 
-export const SideMenu = DrawerNavigator({
-  TabBar:{
-    screen: Tabs,
-  }
-},
-{
-  drawerWidth: 300,
-  drawerPosition: 'left',
-  contentComponent: props => <Menu {...props}/>
-});
+// export const SideMenu = DrawerNavigator({
+//   TabBar:{
+//     screen: Tabs,
+//   }
+// },
+// {
+//   drawerWidth: 300,
+//   drawerPosition: 'left',
+//   contentComponent: props => <Menu {...props}/>
+// });
