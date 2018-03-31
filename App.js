@@ -11,10 +11,10 @@ import {
   Text,
   View
 } from 'react-native';
-//import ConNguoi from "./components/ConNguoi.js";
-//import { HomeStack } from './components/Router.js';
-//import { Tabs } from './components/Router.js';
+import ConNguoi from "./components/ConNguoi.js";
+import { HomeStack } from './components/Router.js';
 import { Tabs } from './components/Router.js';
+import FlatListItem from "./components/FlatListItem.js";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -38,7 +38,10 @@ export default class App extends Component<Props> {
       // </View>
 
       //navigation
-      <Tabs />
+      //<Tabs />
+
+      //Flatlist
+      <FlatListItem />
     );
   }
 }
