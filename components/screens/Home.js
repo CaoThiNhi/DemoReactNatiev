@@ -18,6 +18,10 @@ export default class Home extends Component{
           onPress={() => { this.props.navigation.navigate('ManHinh_Detail',{ thamso: 'Hello Nhi'}) }}>
           <Text style={{color:'#fff', fontSize: 20, padding: 10}}>Go to Detail</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={{backgroundColor:'red'}}
+          onPress={() => { this.props.navigation.navigate('DrawerOpen') }}>
+          <Text style={{color:'#fff', fontSize: 20, padding: 10}}>Go to Menu</Text>
+        </TouchableOpacity>
       </View>
     );
   }
