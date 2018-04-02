@@ -15,6 +15,8 @@ import ConNguoi from "./components/ConNguoi.js";
 import { HomeStack } from './components/Router.js';
 import { Tabs } from './components/Router.js';
 import FlatListItem from "./components/FlatListItem.js";
+import TestWebService from "./components/TestWebService.js";
+import DangKi from "./components/DangKi.js";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -41,7 +43,11 @@ export default class App extends Component<Props> {
       //<Tabs />
 
       //Flatlist
-      <FlatListItem />
+      //<FlatListItem />
+
+      //GET/POST WebService
+      //<TestWebService />
+      <DangKi />
     );
   }
 }
