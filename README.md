@@ -3,12 +3,15 @@
 - Navigation React
 - Di chuyen giua cac component : StackNavigator
 - Di chuyển các component con trong component tổng: TabNavigator
+- SideMenu : DrawerNavigator
 
-- Cách sử dụng FlatList
+- FlatList
 - Pull to refresh
 - OnEndReached => Load more
 - Move to row
 - Load data từ Web Service
 
 - GET/POST DATA vơi PHP Server
-- Side Menu với Drawer
+
+- Lưu trữ data offline với Async Storage
+- Định dạng layout với Flex

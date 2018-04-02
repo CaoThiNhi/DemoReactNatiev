@@ -12,13 +12,13 @@ import {
   View
 } from 'react-native';
 import ConNguoi from "./components/ConNguoi.js";
-import { HomeStack } from './components/Router.js';
-import { Tabs } from './components/Router.js';
-import { SideMenu } from './components/Router.js';
+import { HomeStack } from './components/StackComponent.js';
+import { Tabs } from './components/TabComponent.js';
+import { SideMenu } from "./components/SideMenuComponent.js";
 import FlatListItem from "./components/FlatListItem.js";
 import TestWebService from "./components/TestWebService.js";
 import DangKi from "./components/DangKi.js";
-//import SideMenu from "./components/SideMenu.js";
+import AsyncStorage from "./components/AsyncStorage.js";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -43,7 +43,7 @@ export default class App extends Component<Props> {
 
       //navigation
       //<Tabs />
-      <SideMenu />
+      //<SideMenu />
 
       //Flatlist
       //<FlatListItem />
@@ -51,7 +51,9 @@ export default class App extends Component<Props> {
       //GET/POST WebService
       //<TestWebService />
       //<DangKi />
-      
+
+      //AsynStorage
+      <AsyncStorage />
     );
   }
 }

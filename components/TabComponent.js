@@ -5,34 +5,8 @@ import {
   TabNavigator,
   DrawerNavigator
  } from 'react-navigation';
-import Home from './screens/Home.js';
-import Detail from './screens/Detail.js';
-import User from './screens/User.js';
-import Menu from './screens/Menu.js';
-
-export const HomeStack = StackNavigator({
-  ManHinh_Home: {
-    screen: Home,
-    navigationOptions: {
-      title: 'Trang Chu'
-    }
-  },
-  ManHinh_Detail: {
-    screen: Detail,
-    navigationOptions: {
-      title: 'Chi Tiet'
-    }
-  },
-});
-
-export const UserStack = StackNavigator({
-  ManHinh_User: {
-    screen: User,
-    navigationOptions: {
-      title: 'Tai khoan ca nhan'
-    }
-  },
-});
+import { HomeStack } from './StackComponent.js';
+import { UserStack } from './StackComponent.js';
 
 export const Tabs = TabNavigator({
   Home:{
@@ -64,15 +38,4 @@ export const Tabs = TabNavigator({
     activeTintColor: 'red',
     inactiveTintColor: 'green',
   }
-});
-
-export const SideMenu = DrawerNavigator({
-  TabBar:{
-    screen: Tabs,
-  }
-},
-{
-  drawerWidth: 300,
-  drawerPosition: 'left',
-  contentComponent: props => <Menu {...props}/>
 });
