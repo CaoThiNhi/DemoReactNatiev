@@ -5,7 +5,8 @@ import  {
   FlatList,
   StyleSheet,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from 'react-native';
 
 export default class FlatListItem extends Component{
@@ -38,14 +39,10 @@ export default class FlatListItem extends Component{
           ref = "danhsach"
 
           refreshing = {this.state.refresh}
-          onRefresh = { () => { this.refesh()} }
+          onRefresh = { () => {this.refesh()} }
 
-          onEndReachedThreshold = {-0.2}
-          onEndReached = {() => {
-            this.setState({
-              txt:"CAO NHI"
-            });
-          }}
+          onEndReachedThreshold = {0.1}
+          onEndReached = { () => {this.loadMore()} }
 
           data = { this.state.mang }
           renderItem = { ({item}) =>
@@ -82,19 +79,47 @@ export default class FlatListItem extends Component{
     this.setState({
       refresh: true
     });
-    fetch("http://192.168.1.170/reactNative/flatlist2.php")
+    fetch("http://192.168.1.170/reactNative/flatlist3.php?trang=" + this.state.page)
     .then((response) => response.json())
     .then((responseJson) => {
       console.log(responseJson);
       this.setState({
         mang: responseJson,
-        refresh: false
+        refresh: false,
+        page: this.state.page + 1
       });
     })
    .catch((e) => {console.log(e)});
   }
+
+  loadMore(){
+    mang1 = []
+    fetch("http://192.168.1.170/reactNative/flatlist3.php?trang=" + this.state.page)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      if(responseJson.length != 0){
+        mang1 = mang1.concat(responseJson);
+        this.setState({
+          mang: mang1,
+          txt:"CAO NHI",
+          page: this.state.page + 1
+        });
+      }else{
+        Alert.alert(
+          'THONG BAO',
+          'Da het du lieu !',
+          [
+            {text: 'OK', onPress:() => console.log('OK Pressed')},
+          ]
+        )
+      }
+
+    })
+   .catch((e) => {console.log(e)});
+  }
+
   componentDidMount(){
-      fetch("http://192.168.1.170/reactNative/flatlist.php")
+      fetch("http://192.168.1.170/reactNative/flatlist3.php?trang=" + this.state.page)
       .then((response) => response.json())
       .then((responseJson) => {
         console.log(responseJson);
