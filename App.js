@@ -19,6 +19,7 @@ import FlatListItem from "./components/FlatListItem.js";
 import TestWebService from "./components/TestWebService.js";
 import DangKi from "./components/DangKi.js";
 import AsyncStorage from "./components/AsyncStorage.js";
+import Layout from "./components/Layout.js";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -43,7 +44,7 @@ export default class App extends Component<Props> {
 
       //navigation
       //<Tabs />
-      //<SideMenu />
+      <SideMenu />
 
       //Flatlist
       //<FlatListItem />
@@ -53,7 +54,10 @@ export default class App extends Component<Props> {
       //<DangKi />
 
       //AsynStorage
-      <AsyncStorage />
+      //<AsyncStorage />
+
+      //Layout
+      //< Layout/>
     );
   }
 }
